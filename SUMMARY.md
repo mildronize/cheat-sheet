@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Cheat sheet](README.md)
 * [Getting Started](getting-started.md)
 * [React](react.md)
 * [Latex](latex.md)

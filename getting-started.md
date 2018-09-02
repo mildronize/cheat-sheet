@@ -1,10 +1,8 @@
 ---
-description: Developer Journal start here! บันทึกการเขียนโปรแกรม cheat sheet ต่างๆ
+description: template สำหรับเริ่มเขียนโปรแกรม
 ---
 
 # Getting Started
-
-template สำหรับเริ่มเขียนโปรแกรม
 
 ### Python
 

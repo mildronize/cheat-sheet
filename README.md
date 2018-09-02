@@ -1,6 +1,10 @@
-# Initial page
+---
+description: Developer Journal start here! บันทึกการเขียนโปรแกรม cheat sheet ต่างๆ
+---
 
-## my cheat sheet
+# Cheat sheet
+
+
 
 
 
