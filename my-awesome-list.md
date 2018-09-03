@@ -1,5 +1,10 @@
 # My Awesome List
 
+## CSS-in-JS
+
+* [CSS in JS: Benefits, Drawbacks, and Tooling](https://objectpartners.com/2017/11/03/css-in-js-benefits-drawbacks-and-tooling/)
+* [All You Need To Know About CSS-in-JS](https://hackernoon.com/all-you-need-to-know-about-css-in-js-984a72d48ebc)
+
 ## React
 
 ### Best Practice
