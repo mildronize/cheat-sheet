@@ -6,11 +6,11 @@ description: template สำหรับเริ่มเขียนโปร�
 
 ### Python
 
-ใช้ cookiecutter [https://github.com/kragniz/cookiecutter-pypackage-minimal](https://github.com/kragniz/cookiecutter-pypackage-minimal)
+ใช้ cookiecutter [https://github.com/kragniz/cookiecutter-pypackage-minimal](https://github.com/mildronize/cookiecutter-pypackage-minimal)
 
 ```text
 pip install cookiecutter
-cookiecutter https://github.com/kragniz/cookiecutter-pypackage-minimal.git
+cookiecutter https://github.com/mildronize/cookiecutter-pypackage-minimal.git
 ```
 
 ### Next.JS
