@@ -1,121 +1,10 @@
 # React & JavaScript ES6
 
+## My following style guide
 
+JS: [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
 
-## Next.JS
-
-### Basic
-
-```javascript
-export default () => (
-    <p>Technology + สารานุกรม = Techนุกรม</p>
-)
-```
-
-### Basic SSR
-
-```jsx
-const Index = (props) => (
-  <p>Data: {props.data}</p>
-)
-Index.getInitialProps = function () {
-  return {data: 1}
-}
-export default Index
-```
-
-method ของ Nextjs for SSR
-
-```javascript
-getInitialProps(context) {
-    var id = context.query.id === undefined ? 0 : context.query.id;
-    // do something
-}
-
-// In server.js of express
-server.get('/:id', (req, res) => {
-    const actualPage = '/'
-    const queryParams = { id: req.params.id }
-    app.render(req, res, actualPage, queryParams)
-})
-```
-
-### Sass setup
-
-1. `yarn add next-sass node-sass`
-2. แก้ไฟล์ `./next.config.js`
-
-   ```jsx
-   // ./next.config.js
-   const withSass = require('@zeit/next-sass')
-   module.exports = withSass({
-       exportPathMap : () => { '/': { page: '/' } }
-       sassLoaderOptions: {
-         includePaths: ["./node_modules", "./styles"],  // don't use relative path
-         outputStyle: 'compressed'  // minify CSS
-       }
-     });
-   ```
-
-3. สร้างไฟล์ `./styles/index.scss`
-4. เพิ่ม `import '../styles/index.scss'` ใน `./pages/_app.js`
-
-   ```jsx
-   // ./pages/_app.js
-   import App, {Container} from 'next/app'
-   import React from 'react'
-   // Add this line
-   import '../styles/index.scss'
-
-   export default class MyApp extends App {
-     static async getInitialProps ({ Component, router, ctx }) {
-       let pageProps = {}
-
-       if (Component.getInitialProps) {
-         pageProps = await Component.getInitialProps(ctx)
-       }
-
-       return {pageProps}
-     }
-
-     render () {
-       const {Component, pageProps} = this.props
-       return <Container>
-         <Component {...pageProps} />
-       </Container>
-     }
-   }
-   ```
-
-5. แก้ `./pages/_document.js`
-
-   ```jsx
-   // ./pages/_document.js
-   import Document, { Head, Main, NextScript } from 'next/document'
-
-   export default class MyDocument extends Document {
-     static async getInitialProps(ctx) {
-       const initialProps = await Document.getInitialProps(ctx)
-       return { ...initialProps }
-     }
-
-     render() {
-       return (
-         <html>
-           <Head>
-             <style>{`body { margin: 0 } /* custom! */`}</style>
-             {/* Add this line */}
-             <link rel="stylesheet" type='text/css' href="/_next/static/style.css" />
-           </Head>
-           <body className="custom_class">
-             <Main />
-             <NextScript />
-           </body>
-         </html>
-       )
-     }
-   }
-   ```
+React: [https://github.com/airbnb/javascript/tree/master/react](https://github.com/airbnb/javascript/tree/master/react) 
 
 ## React
 
@@ -392,6 +281,121 @@ const logAdd = log(add)
 ```
 
 เทคนิคจะใช้มากใน React ก็คือ Higher-order Components \(HoC\)
+
+## Next.JS
+
+### Basic
+
+```javascript
+export default () => (
+    <p>Technology + สารานุกรม = Techนุกรม</p>
+)
+```
+
+### Basic SSR
+
+```jsx
+const Index = (props) => (
+  <p>Data: {props.data}</p>
+)
+Index.getInitialProps = function () {
+  return {data: 1}
+}
+export default Index
+```
+
+method ของ Nextjs for SSR
+
+```javascript
+getInitialProps(context) {
+    var id = context.query.id === undefined ? 0 : context.query.id;
+    // do something
+}
+
+// In server.js of express
+server.get('/:id', (req, res) => {
+    const actualPage = '/'
+    const queryParams = { id: req.params.id }
+    app.render(req, res, actualPage, queryParams)
+})
+```
+
+### Sass setup
+
+1. `yarn add next-sass node-sass`
+2. แก้ไฟล์ `./next.config.js`
+
+   ```jsx
+   // ./next.config.js
+   const withSass = require('@zeit/next-sass')
+   module.exports = withSass({
+       exportPathMap : () => { '/': { page: '/' } }
+       sassLoaderOptions: {
+         includePaths: ["./node_modules", "./styles"],  // don't use relative path
+         outputStyle: 'compressed'  // minify CSS
+       }
+     });
+   ```
+
+3. สร้างไฟล์ `./styles/index.scss`
+4. เพิ่ม `import '../styles/index.scss'` ใน `./pages/_app.js`
+
+   ```jsx
+   // ./pages/_app.js
+   import App, {Container} from 'next/app'
+   import React from 'react'
+   // Add this line
+   import '../styles/index.scss'
+
+   export default class MyApp extends App {
+     static async getInitialProps ({ Component, router, ctx }) {
+       let pageProps = {}
+
+       if (Component.getInitialProps) {
+         pageProps = await Component.getInitialProps(ctx)
+       }
+
+       return {pageProps}
+     }
+
+     render () {
+       const {Component, pageProps} = this.props
+       return <Container>
+         <Component {...pageProps} />
+       </Container>
+     }
+   }
+   ```
+
+5. แก้ `./pages/_document.js`
+
+   ```jsx
+   // ./pages/_document.js
+   import Document, { Head, Main, NextScript } from 'next/document'
+
+   export default class MyDocument extends Document {
+     static async getInitialProps(ctx) {
+       const initialProps = await Document.getInitialProps(ctx)
+       return { ...initialProps }
+     }
+
+     render() {
+       return (
+         <html>
+           <Head>
+             <style>{`body { margin: 0 } /* custom! */`}</style>
+             {/* Add this line */}
+             <link rel="stylesheet" type='text/css' href="/_next/static/style.css" />
+           </Head>
+           <body className="custom_class">
+             <Main />
+             <NextScript />
+           </body>
+         </html>
+       )
+     }
+   }
+   ```
 
 ## Ref:
 
