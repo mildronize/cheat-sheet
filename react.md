@@ -1,4 +1,4 @@
-# React
+# React & JavaScript ES6
 
 
 
@@ -117,7 +117,7 @@ server.get('/:id', (req, res) => {
    }
    ```
 
-## React & JS
+## React
 
 ### Introduction
 
@@ -210,6 +210,38 @@ render return <a onClick={this.doSomething}>Load more</a>;
 
 ```javascript
 render <a class={`button is-primary ${this.state.isLoading ? "is-loading" : ""}`}>Load More</a>
+```
+
+## Javascript
+
+### Functional Programming
+
+ใน JS สามารถเขียน แบบ Functional Programming  เป็น declarative paradigm 
+
+### เปรียบเทียบ imperative และ declarative paradigm 
+
+**imperative** คือคิดจาก หน้าไปหลัง , ล่างขึ้นบน คล้ายๆ กับภาษา C เช่น เราจะออกไปวิ่งรอบสนาม 10 รอบ เราก็ต้องคิดว่า เราจะเริ่มทำอะไรก่อน หลังจากนั้นจะทำอะไร เราสามารถลำดับเป็นขั้นตอนดังนี้
+
+* ใส่รองเท้า
+* เดินไปสนามวิ่ง
+* เริ่มวิ่ง แล้ว จำว่า ตอนนี้อยู่รอบที่เท่าไหร่แล้ว
+* วิ่งจนครบ 10 รอบ
+
+หรือสามารถ เขียนเป็นโปรแกรมได้ดังนี้นะ
+
+```javascript
+prepare_something();
+for( var i = 0; i < 10; i++ ){
+    run();
+}
+```
+
+**declarative** คือ คิดบนลงล่าง เช่น วิ่งรอบสนาม 10 รอบ แต่เราสิ่งที่เราเห็นคือ เราเห็นแค่ ว่าเราทำอะไร แต่เราไม่จำเป็นต้องรู้ว่า ข้างในนั้นเราทำอะไรบ้าง
+
+```javascript
+rounds.map( round => {
+    run();
+});
 ```
 
 ### String
@@ -341,6 +373,25 @@ export default async () => {
 const arr1 = ["a", "b", "c"];
 const arr2 = [...arr1, "d", "e", "f"]; // ["a", "b", "c", "d", "e", "f"]
 ```
+
+### **Higher-order Function \(HoF\)**
+
+ใน JS function เป็น _first-class objects,_ สามารถที่กำหนดให้เป็น parameter ของ function อื่นได้ หรือ assign ให้ตัวแปรได้ด้วย
+
+[Higher-order Function ](https://www.safaribooksonline.com/library/view/react-design-patterns/9781786464538/ch02s03.html)คือ function ที่เอา function เป็น parameter และ return ออกเป็น function เช่นเดียวกัน โดยเราสามารถเพิ่มความสามารถอะไรบางอย่างให้กับ function นั้นได้ เช่น เราสามารถ log parameter ของ function add ได้ผ่านเทคนิค HoF
+
+```javascript
+const add = (x, y) => x + y 
+ 
+const log = func => (...args) => { 
+  console.log(...args) 
+  return func(...args) 
+} 
+ 
+const logAdd = log(add) 
+```
+
+เทคนิคจะใช้มากใน React ก็คือ Higher-order Components \(HoC\)
 
 ## Ref:
 
