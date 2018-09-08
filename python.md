@@ -6,7 +6,7 @@
 
 Example, we have a lib called `module.py`
 
-```text
+```python
 # module.py
 
 def fun1(n):
@@ -17,7 +17,7 @@ There are four way to import `module.py`
 
 **1- import**
 
-```text
+```python
 import module
 
 module.fun1(1000) #1001
@@ -25,7 +25,7 @@ module.fun1(1000) #1001
 
 #### **2- from**
 
-```text
+```python
 from module import fun1
 
 fun1(1000) #1001
@@ -33,7 +33,7 @@ fun1(1000) #1001
 
 **3- import \***
 
-```text
+```python
 from module import *
 
 fun1(1000) #1001
@@ -41,7 +41,7 @@ fun1(1000) #1001
 
 **4- import as**
 
-```text
+```python
 import module as lib
 
 lib.fun1(1000) #1001
