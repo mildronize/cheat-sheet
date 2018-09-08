@@ -8,4 +8,5 @@
 * [Latex](latex.md)
 * [Git](git.md)
 * [CSS](css.md)
+* [Python](python.md)
 
