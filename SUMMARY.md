@@ -9,4 +9,7 @@
 * [CSS](css.md)
 * [Python](python.md)
 * [Webpack4](webpack4.md)
+* [Powershell](powershell.md)
+* [ไทย ไทย](linux-thai/README.md)
+  * [Font ไทย](linux-thai/font.md)
 
